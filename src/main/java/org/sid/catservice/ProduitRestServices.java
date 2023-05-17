@@ -12,25 +12,25 @@ import java.util.List;
 public class ProduitRestServices {
     @Autowired
     private ProduitRepository produitRepository;
-    @GetMapping(value = "/listProduits")
+    @GetMapping(value = "/listProducts")
     public List<Produit> listProduits(){
         return produitRepository.findAll();
     }
-    @GetMapping(value = "/listProduits/{id}")
+    @GetMapping(value = "/listProducts/{id}")
     public Produit listProduits(@PathVariable(name = "id") Long id){
         return produitRepository.findById(id).get();
     }
 
-    @PutMapping(value = "/listProduits/{id}")
+    @PutMapping(value = "/listProducts/{id}")
     public Produit update(@PathVariable(name = "id") Long id,@RequestBody Produit p){
         p.setId(id);
         return produitRepository.save(p);
     }
-    @PostMapping(value = "/listproduits")
+    @PostMapping(value = "/listproducts")
     public Produit save(@RequestBody Produit p){
         return produitRepository.save(p);
     }
-    @DeleteMapping(value = "/listproduits/{id}")
+    @DeleteMapping(value = "/listproducts/{id}")
     public void delete(@PathVariable(name = "id") Long id){
         produitRepository.deleteById(id);
     }
