@@ -22,9 +22,9 @@ public class CatServiceApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		restConfiguration.exposeIdsFor(Produit.class);
-		produitRepository.save(new Produit(null, "Ordinateur Lx 45",6700,3));
-		produitRepository.save(new Produit(null, "Imprimante HP",1700,3));
-		produitRepository.save(new Produit(null, "Smart Phone Samsung S9",8000,9));
+		produitRepository.save(new Produit(null, " Ordinateur Lx 45",6700,3));
+		produitRepository.save(new Produit(null, " Imprimante HP",1700,3));
+		produitRepository.save(new Produit(null, " Smart Phone Samsung S9",8000,9));
 
 		produitRepository.findAll().forEach(p ->{
 			System.out.println(p.toString());
